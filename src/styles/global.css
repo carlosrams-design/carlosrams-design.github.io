@@ -1,9 +1,10 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/forms";
 @plugin "@tailwindcss/typography";
+
 @theme {
-  --font-sans: Inter, sans-serif;
-  --font-display: InterDisplay, monospace;
+  --font-sans: 'Montserrat', sans-serif;
+  --font-display: 'Montserrat', sans-serif;
   --font-mono: JetBrains Mono, monospace;
   --color-base-50: oklch(96.74% 0.001 286.38);
   --color-base-100: oklch(93.73% 0.001 286.37);
@@ -17,27 +18,30 @@
   --color-base-900: oklch(23.48% 0.004 264.49);
   --color-base-950: oklch(16.89% 0.002 286.18);
 }
-/* CSS */
-:root {
-  font-family: Inter, sans-serif;
+
+/* ========================================================
+   ESTILOS FORZADOS PARA LOS ENCABEZADOS (TU COLOR DORADO)
+   ======================================================== */
+h1, h2, h3, h4, h5, h6 {
+  color: oklch(61.71% 0.1162 105.83) !important;
 }
-@supports (font-variation-settings: normal) {
-  /* Use variable font if supported */
-  :root {
-    font-family: InterVariable, sans-serif;
-  }
+
+/* ========================================================
+   PARCHE PARA LOS BLOQUES DE CÓDIGO (SHIKI)
+   ======================================================== */
+pre.shiki, code {
+  background-color: #f5f5f5 !important;
+  color: #000000 !important;
 }
-:root {
-  --astro-code-color-text: #ba1818;
-  --astro-code-background: #9c1414;
-  --astro-code-token-constant: #d80b0b80;
-  --astro-code-token-string: #c1101050;
-  --astro-code-token-comment: #910d0d60;
-  --astro-code-token-keyword: rgb(176, 15, 15);
-  --astro-code-token-parameter: #ffffff;
-  --astro-code-token-function: rgb(120, 17, 17);
-  --astro-code-token-string-expression: #120fb4;
-  --astro-code-token-punctuation: #ffffff;
-  --astro-code-token-link: #961414;
+pre.shiki .keyword { color: #000050 !important; }
+pre.shiki .string { color: #000080 !important; }
+pre.shiki .comment { color: #000060 !important; }
+pre.shiki .function { color: #ff0055 !important; }
+pre.shiki .punctuation { color: #000000 !important; }
+pre.shiki .constant, pre.shiki .number { color: #2522fc !important; }
+pre.shiki .parameter { color: #555555 !important; }
+
+/* Forzar el color dorado en el título global de la cabecera y el logo */
+header a, .logo, a[href="/"] {
+  color: oklch(61.71% 0.1162 105.83) !important;
 }
-s
