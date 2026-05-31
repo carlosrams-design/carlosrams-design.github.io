@@ -23,11 +23,11 @@ const { title, url, description, pubDate, author, image, tags } = Astro.props;
       <time datetime={pubDate}>{pubDate}</time>
     </div>
 
-    <h3 class="mt-2 text-base font-montserrat font-semibold text-base-900 truncate">
-      <a href={url} class="hover:underline">{title}</a>
+    <h3 class="mt-2 text-base font-montserrat font-semibold text-base-900 h-[48px] overflow-hidden">
+      <a href={url} class="hover:underline block">{title}</a>
     </h3>
 
-    <p class="mt-1 text-sm text-base-500 font-inter line-clamp-2 min-h-[40px]">
+    <p class="mt-1 text-sm text-base-500 font-inter h-[44px] overflow-hidden">
       {description}
     </p>
   </div>
